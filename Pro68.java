@@ -1,48 +1,55 @@
-import java.util.Scanner;
+package dsad;
+
+import java.util.*;
+
 public class Pro68 {
-public static void main(String[] args) {
-	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter the First Name : ");
-	String s=sc.nextLine();
-	System.out.println("Enter the last Name : ");
-	String s1=sc.nextLine();
-	System.out.println("Enter the 6 digit Pin no. : ");
-	String s2=sc.nextLine();
-	System.out.println("Enter the value of N : ");
-	int n=sc.nextInt();
-	int len=s.length();
-	int len1=s1.length();
-	int len2=s2.length();
-	char h = 0,j=0;
-	String longer="";
-	String smaller="";
-	if(len!=len1)
-	{
-		longer=s.substring(0,1);
-		smaller=s1.substring(0,len1);
-	}
-else if(len==len1)
-	{
-		char a=s.charAt(0);
-		char b=s1.charAt(0);
-		int c=(int) a;
-		int d=(int) b;
-		if(c<d)
-		{
-			char e=(char) c;
-			longer=String.valueOf(e);
-			smaller=s1;
-		}
-		else
-		{
-			char e=(char) d;
-			longer=String.valueOf(e);
-			smaller=s;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner ss=new Scanner(System.in);
+	String str=ss.next();
+	String str1=ss.next();
+	String str2=ss.next();
+	int N=ss.nextInt();
+	String sn="";
+	String ln="";
+	int l1=str.length();
+	int l2=str1.length();
+	if(l1>l2) {
+		ln=str;
+		sn=str1;
+	}else if(l1<l2) {
+		ln=str1;
+		sn=str;
+	}else {
+		if(str.compareTo(str1)>0) {
+			ln=str;
+			sn=str1;
+		}else if(str.compareTo(str1)<0) {
+			ln=str1;
+			sn=str;
+		}else {
+			ln=str;
+			sn=str1;
 		}
 	}
-	h=s2.charAt(n-1);
-	String s5=new StringBuffer(s2).reverse().toString();
-	j=s5.charAt(n-1);
-	System.out.println(longer+smaller+h+j);
+	char ch=str.charAt(0);
+	char ch1=str2.charAt(N-1);
+	char ch2=str2.charAt(str2.length()-N);
+	String out=ch+sn+ch1+ch2;
+	for(int i=0;i<out.length();i++) {
+		char ch11=out.charAt(i);
+		if(Character.isLetter(ch11)) {
+			if(Character.isUpperCase(ch11)) {
+				System.out.print((ch11+"").toLowerCase());
+			}else {
+				System.out.print((ch11+"").toUpperCase());
+			}
+		}else {
+			System.out.print(ch11);
+		}
+	}
+	
 }
+
 }
