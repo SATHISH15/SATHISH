@@ -31,7 +31,7 @@ public char check(String arr){
 public static void main(String[] args) {
 
     Scanner s1 = new Scanner(System.in);
-    String s = s1.next();
+    String s = s1.nextLine();
     Pro53 obj = new Pro53();
 
     int d = obj.check(s);
